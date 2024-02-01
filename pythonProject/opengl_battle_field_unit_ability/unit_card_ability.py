@@ -25,7 +25,7 @@ class UnitCardAbility:
 
     def drawText(self, x, y, text):
         font = pygame.font.Font("../../local_storage/card/NanumGothic.ttf", 64)
-        textSurface = font.render(text, True, (125, 125, 125, 255)).convert_alpha()
+        textSurface = font.render(text, True, (125, 125, 125, 255))
         textData = pygame.image.tostring(textSurface, "RGBA", True)
         glWindowPos2d(x - textSurface.get_width() / 2, y - textSurface.get_height() / 2)
         glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA,

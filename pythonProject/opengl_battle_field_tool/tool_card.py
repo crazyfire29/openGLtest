@@ -1,10 +1,8 @@
 import os
 
 from opengl_shape.circle import Circle
-from opengl_shape.image_circle_element import ImageCircleElement
 
-
-class ItemCard:
+class ToolCard:
     __imagePath = None
 
     def __init__(self, local_translation=(0, 0), scale=1):
@@ -22,35 +20,36 @@ class ItemCard:
         shape.local_translate(self.local_translation)
         self.shapes.append(shape)
 
-    def create_item_energy_circle(self, color, center, radius):
+    def create_tool_energy_circle(self, color, center, radius):
         unit_energy_circle = Circle(color=color,
                                     center=center,
                                     radius=radius)
         self.add_shape(unit_energy_circle)
 
-    def create_item_race_illustration_circle(self, image_path, center, radius):
-        unit_race_circle = ImageCircleElement(image_path=image_path,
-                                              center=center,
-                                              radius=radius)
-        self.add_shape(unit_race_circle)
+    def create_tool_race_circle(self, color, center, radius):
+        unit_tribe_circle = Circle(color=color,
+                                   center=center,
+                                   radius=radius)
+        self.add_shape(unit_tribe_circle)
 
-    def create_item_type_circle(self, color, center, radius):
+    def create_tool_type_circle(self, color, center, radius):
         unit_attack_circle = Circle(color=color,
                                     center=center,
                                     radius=radius)
         self.add_shape(unit_attack_circle)
 
 
-    def init_item_card(self, image_path,circle_radius):
-        print(f"{image_path}")
-        self.create_item_energy_circle(color=(1.0, 0.33, 0.34, 1.0),
+    def init_shapes(self):
+
+        circle_radius = 30
+        self.create_tool_energy_circle(color=(1.0, 0.33, 0.34, 1.0),
                                        center=(0, 0),
                                        radius=circle_radius)
 
-        self.create_item_race_illustration_circle(image_path=image_path,
-                                                    center=(350, 0),
-                                                    radius=circle_radius)
+        self.create_tool_race_circle(color=(0.678, 0.847, 0.902, 1.0),
+                                     center=(350, 0),
+                                     radius=circle_radius)
 
-        self.create_item_type_circle(color=(0.988, 0.976, 0.800, 1.0),
+        self.create_tool_type_circle(color=(0.988, 0.976, 0.800, 1.0),
                                      center=(350, 500),
                                      radius=circle_radius)

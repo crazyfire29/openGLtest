@@ -1,6 +1,5 @@
 import os
 
-import pygame
 from pyopengltk import OpenGLFrame
 from OpenGL import GL, GLU
 
@@ -34,13 +33,13 @@ class BattleFieldFrame(OpenGLFrame):
     def make_battle_field(self):
         project_root = get_project_root()
 
-        # first_unit = UnitCard()
-        # first_unit.init_shapes(os.path.join(project_root, "local_storage", "card_images", "card1.png"))
+        first_unit = UnitCard()
+        first_unit.init_shapes(os.path.join(project_root, "local_storage", "card_images", "card1.png"))
 
-        second_card = Card()
-        second_card.init_shapes(os.path.join(project_root, "local_storage", "card_images", "card2.png"))
+        second_card = Card(local_translation=(500, 0))
+        second_card.init_shapes(os.path.join(project_root, "local_storage", "card_images", "card2.png"),2)
 
-        # self.battle_field.add_unit_card(first_unit)
+        self.battle_field.add_unit_card(first_unit)
         self.battle_field.add_unit_card(second_card)
 
 

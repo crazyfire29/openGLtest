@@ -1,4 +1,5 @@
 from enum import Enum
+from enum import Enum
 
 
 class CustomProtocol(Enum):
@@ -7,9 +8,17 @@ class CustomProtocol(Enum):
 
     SESSION_LOGIN = 3
 
-    ENTER_BATTLE_LOBBY = 4
-    ENTER_MATCH = 5
-    DECK_LIST = 333
+    DECK_NAME_LIST = 11
+    ENTER_MATCHING = 12
+    CHECK_MATCHING = 13
+    DECK_CARD_LIST = 14
+    CANCEL_MATCHING = 15
+    WHAT_IS_THE_ROOM_NUMBER = 16
+    CHECK_BATTLE_PREPARE = 17
+
+    ACCOUNT_DECK_REGISTER = 41
+
+    SURRENDER = 4443
     PROGRAM_EXIT = 4444
 
 
